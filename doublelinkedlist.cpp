@@ -37,4 +37,32 @@ void addNode()
         newNode -> prev = NULL;   // step 5 : make the new node point to NULL
         START = newNode;   // step 6 : make the new node the first node
     }
+
+    else
+    {
+		Node* current = START;
+		Node* previous = NULL;
+
+		while (current != NULL && current->noMhs < newNode->noMhs)
+		{
+			previous = current;
+			current = current->next;
+		}
+		newNode->next = current;
+		newNode->prev = previous;
+
+		if (current != NULL)
+		{
+			current->prev = newNode;
+		}
+
+		if (previous != NULL)
+		{
+			previous->next = newNode;
+		}
+		else
+		{
+			START = newNode;
+		}
+	}
 }

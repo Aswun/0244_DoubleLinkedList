@@ -233,5 +233,9 @@ int main()
 			} 
 
         }
+        		catch (exception& e)
+		{
+			cout << "Chek for the values entered." << endl;
+		}
     }
 }
